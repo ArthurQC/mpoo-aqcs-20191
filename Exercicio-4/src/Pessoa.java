@@ -3,6 +3,15 @@ public class Pessoa {
 	private String nome;
 	private String cpf;
 	private Endereco endereco;
+	private Matricula matricula;
+
+	public Matricula getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(Matricula matricula) {
+		this.matricula = matricula;
+	}
 
 	public Endereco getEndereco() {
 		return endereco;
@@ -27,7 +36,8 @@ public class Pessoa {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
 	public String toString() {
-		return "Nome: "+this.nome+"\nCpf: "+this.cpf+"\n";
+		return "Nome: " + this.nome + "\nCpf: " + this.cpf + "\nEndereço: "+this.endereco+"\n";
 	}
 }

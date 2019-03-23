@@ -37,6 +37,6 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 	public String toString(){
-		return "Endereço: Rua "+this.rua+" N° "+this.numero+" "+this.complemento+" - "+this.cidade+"\n";
+		return "Rua "+this.rua+" N° "+this.numero+" "+this.complemento+" - "+this.cidade;
 	}
 }

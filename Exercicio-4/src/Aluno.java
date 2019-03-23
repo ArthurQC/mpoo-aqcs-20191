@@ -1,7 +1,7 @@
 
-public class Aluno extends Pessoa {
+public class Aluno {
 	private int anoEntrada;
-	private int periodoEntrada;
+	private double periodoEntrada;
 
 	public int getAnoEntrada() {
 		return anoEntrada;
@@ -11,18 +11,15 @@ public class Aluno extends Pessoa {
 		this.anoEntrada = anoEntrada;
 	}
 
-	public int getPeriodoEntrada() {
+	public double getPeriodoEntrada() {
 		return periodoEntrada;
 	}
 
-	public void setPeriodoEntrada(int periodoEntrada) {
+	public void setPeriodoEntrada(double periodoEntrada) {
 		this.periodoEntrada = periodoEntrada;
 	}
-	public void imprime() {
-		System.out.print(this);
-		System.out.println("Ano de entrada: "+this.anoEntrada);
-		System.out.println("Período de entrada: "+this.periodoEntrada);
-		System.out.println(this.getEndereco());
+	public String toString() {
+		return "Ano de entrada: "+this.anoEntrada+"\nPeríodo de entrada: "+this.periodoEntrada;
 	}
 
 }

@@ -1,7 +1,7 @@
 
 import java.util.Date;
 
-public class Professor extends Pessoa {
+public class Professor {
 	private Date admissao;
 
 	public void setAdmissao(Date admissao) {
@@ -11,9 +11,7 @@ public class Professor extends Pessoa {
 	public Date getAdmissao() {
 		return admissao;
 	}
-	public void imprime() {
-		System.out.print(this);
-		System.out.println("Data de admissão: "+this.admissao);
-		System.out.println(this.getEndereco());
+	public String toString() {
+		return "Data de admissão: "+this.admissao;
 	}
 }

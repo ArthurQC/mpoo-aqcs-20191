@@ -2,37 +2,55 @@ import java.util.Date;
 public class Application {
 
 	public static void main(String[] args) {
-		Professor professor1 = new Professor();
-		Endereco enderecoProfessor = new Endereco();
-
-		professor1.setNome("Gabriel Alves");
-		professor1.setCpf("1234567");
+		
 		Date data = new Date();
-		professor1.setAdmissao(data);
-
+		Professor matriculaProfessor= new Professor();
+		matriculaProfessor.setAdmissao(data);
+		
+		Endereco enderecoProfessor = new Endereco();
 		enderecoProfessor.setRua("Aguazinha");
 		enderecoProfessor.setNumero(123);
 		enderecoProfessor.setComplemento("apto 404");
 		enderecoProfessor.setCidade("Recife");
-		professor1.setEndereco(enderecoProfessor);
-
-		Aluno aluno1 = new Aluno();
-		Endereco enderecoAluno = new Endereco();
-		aluno1.setNome("Coranggo");
-		aluno1.setCpf("987654321");
-
-		enderecoAluno.setRua("Ruella");
-		enderecoAluno.setNumero(2564);
-		enderecoAluno.setComplemento("apto 365");
-		enderecoAluno.setCidade("Recife");
-		aluno1.setEndereco(enderecoAluno);
 		
-		professor1.imprime();
+		Matricula matriculaUsuario1 = new Matricula();
+		matriculaUsuario1.setProfessor(matriculaProfessor);
 		
-		aluno1.imprime();
-
+		Pessoa usuario1 = new Pessoa();
+		usuario1.setCpf("13244567987");
+		usuario1.setNome("Gabriel Alves");
+		usuario1.setEndereco(enderecoProfessor);
+		usuario1.setMatricula(matriculaUsuario1);
+		
+		System.out.println(usuario1);
+		usuario1.getMatricula().imprimeMatricula();
+		
+		//GABRIEL AGORA VIRA ALUNO TAMBÉM:
+		System.out.println("###############################");
+		
+		Aluno matriculaAluno = new Aluno();
+		matriculaAluno.setAnoEntrada(2019);
+		matriculaAluno.setPeriodoEntrada(2019.1);
+		usuario1.getMatricula().setAluno(matriculaAluno);
+		
+		System.out.println(usuario1);
+		usuario1.getMatricula().imprimeMatricula();
+		
+		//GABRIEL FOI DEMITIDO:
+		
+		System.out.println("###############################");
+		
+		usuario1.getMatricula().setProfessor(null);
+		
+		System.out.println(usuario1);
+		usuario1.getMatricula().imprimeMatricula();
+		
+		/*ABORDAGEM UTILIZADA: 
+		 * FOI CRIADA A CLASSE "MATRICULA" COMO INTERMÉDIO ENTRE A PESSOA FÍSICA 
+		 * E A ATUAÇÃO DE ALUNO OU DE PROFESSOR. A HERANÇA DE "PROFESSOR" E "ALUNO" COM A CLASSE "PESSOA" FOI QUEBRADA E AGORA A CLASSE 
+		 * PESSOA TEM O ATRIBUTO MATRICULA, QUE POR SUA VEZ TEM COMO ATRIBUTOS "ALUNO" E "PROFESSOR".
+		 * ASSIM UMA PESSOA PODE ESTAR MATRICULADA APENAS COMO PROFESSOR, APENAS COMO ALUNO, OU COMO PROFESSOR E ALUNO AO MESMO TEMPO. */
 	}
 
 }
-//TRANSOFRAMR ALUNO EM PROFESSOR AO MESMO TEMPO
-//EXPLICAR PORQUE E COMO FEZ PARA O PROFESSOR SER ALUNO E PROFESSOR AO MESMO TEMPO
+
