@@ -36,7 +36,7 @@ public class Endereco {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-
+	public String toString(){
+		return "Endereço: Rua "+this.rua+" N° "+this.numero+" "+this.complemento+" - "+this.cidade+"\n";
+	}
 }
-
-//CRIAR MÉTODO IMPRIMIR ENDEREÇO

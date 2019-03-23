@@ -18,5 +18,11 @@ public class Aluno extends Pessoa {
 	public void setPeriodoEntrada(int periodoEntrada) {
 		this.periodoEntrada = periodoEntrada;
 	}
+	public void imprime() {
+		System.out.print(this);
+		System.out.println("Ano de entrada: "+this.anoEntrada);
+		System.out.println("Período de entrada: "+this.periodoEntrada);
+		System.out.println(this.getEndereco());
+	}
 
 }
